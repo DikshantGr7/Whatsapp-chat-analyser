@@ -8,6 +8,8 @@ The WhatsApp Chat Analyzer is a Python-based tool for analyzing chat data export
 
 2. **helper.py**: Includes helper functions for statistical analysis, visualization generation, and other data processing tasks required for chat analysis.
 
+3. **app.py**: Implements a web interface using Streamlit for the WhatsApp Chat Analyzer, allowing users to upload chat data files and interactively explore insights and visualizations.
+
 ## Libraries Used
 - `pandas`: For data manipulation and analysis.
 - `matplotlib`: For creating visualizations such as plots and charts.
@@ -16,36 +18,35 @@ The WhatsApp Chat Analyzer is a Python-based tool for analyzing chat data export
 - `wordcloud`: For generating word cloud visualizations.
 - `emoji`: For handling emojis in chat messages.
 - `collections`: For counting occurrences of elements in lists.
+- `streamlit`: For building web applications with Python.
 
-## Functions
-1. **preprocess(data)**: Preprocesses raw WhatsApp chat data and returns a structured DataFrame.
+## Functions (app.py)
+1. **fetch_stats(selected_user, df)**: Fetches statistics such as message count, word count, media messages, and links shared for the selected user or overall.
 
-2. **fetch_stats(selected_user, df)**: Fetches statistics such as message count, word count, media messages, and links shared for the selected user or overall.
+2. **most_busy_users(df)**: Identifies the most active users in the chat.
 
-3. **most_busy_users(df)**: Identifies the most active users in the chat.
+3. **create_wordcloud(selected_user, df)**: Generates a word cloud visualization based on chat messages for the selected user or overall.
 
-4. **create_wordcloud(selected_user, df)**: Generates a word cloud visualization based on chat messages for the selected user or overall.
+4. **most_common_words(selected_user, df)**: Identifies the most common words used in chat messages for the selected user or overall.
 
-5. **most_common_words(selected_user, df)**: Identifies the most common words used in chat messages for the selected user or overall.
+5. **emoji_helper(selected_user, df)**: Extracts emojis used in chat messages for the selected user or overall.
 
-6. **emoji_helper(selected_user, df)**: Extracts emojis used in chat messages for the selected user or overall.
+6. **monthly_timeline(selected_user, df)**: Creates a timeline visualization of chat activity per month for the selected user or overall.
 
-7. **monthly_timeline(selected_user, df)**: Creates a timeline visualization of chat activity per month for the selected user or overall.
+7. **daily_timeline(selected_user, df)**: Creates a timeline visualization of chat activity per day for the selected user or overall.
 
-8. **daily_timeline(selected_user, df)**: Creates a timeline visualization of chat activity per day for the selected user or overall.
+8. **week_activity_map(selected_user, df)**: Generates a map of chat activity by day of the week for the selected user or overall.
 
-9. **week_activity_map(selected_user, df)**: Generates a map of chat activity by day of the week for the selected user or overall.
+9. **month_activity_map(selected_user, df)**: Generates a map of chat activity by month for the selected user or overall.
 
-10. **month_activity_map(selected_user, df)**: Generates a map of chat activity by month for the selected user or overall.
-
-11. **activity_heatmap(selected_user, df)**: Generates a heatmap of chat activity by day and hour for the selected user or overall.
+10. **activity_heatmap(selected_user, df)**: Generates a heatmap of chat activity by day and hour for the selected user or overall.
 
 ## Implementation
 To implement the project:
 1. Clone the repository to your local machine.
 2. Install the required libraries using `pip install -r requirements.txt`.
-3. Import the necessary modules (`preprocessor`, `helper`, etc.) into your Python script.
-4. Call the desired functions with appropriate parameters to analyze the WhatsApp chat data and generate insights.
+3. Run the `app.py` script to launch the web interface for the WhatsApp Chat Analyzer.
+4. Upload chat data files and interactively explore insights and visualizations.
 
 ## Uses
 - Social network analysis
